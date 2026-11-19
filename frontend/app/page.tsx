@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="bg-[#FFF8E7] min-h-screen font-sans">
+    <div className="bg-[#FFF8E7] min-h-screen">
       {/* ===== Navbar ===== */}
       <header className="bg-[#0F3D2E] text-white px-6 py-4 flex flex-col items-center gap-4">
         <div className="flex items-center gap-2 text-2xl font-bold">
