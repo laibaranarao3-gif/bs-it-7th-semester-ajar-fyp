@@ -98,12 +98,19 @@ export default function FocusPersonDashboard() {
     <main className="dashboard">
       {/* Sidebar */}
       <aside className="sidebar">
-        <div className="logo">
+        <div className="logo"></div>
           <span className="logo-icon">✦</span>
           <div>
             <h2>AJAR</h2>
             <p>Giving with care</p>
           </div>
+      </aside>    
+    <div className="bg-[#FFF8E7] min-h-screen">
+      {/* ===== Navbar ===== */}
+      <header className="bg-[#0F3D2E] text-white px-6 py-4 flex flex-col items-center gap-4">
+        <div className="flex items-center gap-2 text-2xl font-bold">
+          <span className="bg-cream text-black w-8 h-8 grid place-items-center rounded-lg">♥</span>
+          Ajar
         </div>
 
         <p className="menu-title">MENU</p>
@@ -124,7 +131,9 @@ export default function FocusPersonDashboard() {
             <div><strong>Focus Person</strong><p>Administrator</p></div>
           </div>
         </div>
-      </aside>
+      </header>
+      
+      
 
       {/* Main Content */}
       <section className="main-content">
@@ -218,6 +227,9 @@ export default function FocusPersonDashboard() {
           </div>
         </div>
       )}
+    
+    
+    </div>
     </main>
   );
 }

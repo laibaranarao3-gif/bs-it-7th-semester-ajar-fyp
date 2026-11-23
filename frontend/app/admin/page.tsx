@@ -7,7 +7,7 @@ export default function Admin() {
       {/* ===== SIDEBAR - Left Side ===== */}
       <div className="w-[220px] min-h-screen bg-[#0F3D2E] text-white p-5 hidden md:block fixed left-0 top-0 bottom-0">
         <div className="flex items-center gap-2 text-2xl font-bold">
-          <span className="bg-[#FFF8E7] text-black w-8 h-8 grid place-items-center rounded-lg">A</span>
+          <span className="bg-[#FFF8E7] text-black w-8 h-8 grid place-items-center rounded-lg">A </span>
           Ajar
         </div>
         <p className="text-xs opacity-70 mt-1">Admin Panel</p>
