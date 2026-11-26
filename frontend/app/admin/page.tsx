@@ -14,9 +14,9 @@ export default function Admin() {
 
         <div className="mt-8 space-y-2 text-sm">
           <Link href="/admin" className="block bg-white text-black px-4 py-3 rounded-lg font-bold">📊 Dashboard</Link>
-          <Link href="/admin" className="block px-4 py-3 rounded-lg hover:bg-white/10">🎁 All Donations</Link>
-          <Link href="/admin" className="block px-4 py-3 rounded-lg hover:bg-white/10">🙏 Need Help</Link>
-          <Link href="/admin" className="block px-4 py-3 rounded-lg hover:bg-white/10">👥 All Users</Link>
+          <Link href="/admin/alldonations" className="block px-4 py-3 rounded-lg hover:bg-white/10">🎁 All Donations</Link>
+          <Link href="/admin/need-help" className="block px-4 py-3 rounded-lg hover:bg-white/10">🙏 Need Help</Link>
+          <Link href="/admin/users" className="block px-4 py-3 rounded-lg hover:bg-white/10">👥 All Users</Link>
           <Link href="/" className="block px-4 py-3 rounded-lg hover:bg-white/10">🏠 Home</Link>
           <Link href="/about" className="block px-4 py-3 rounded-lg hover:bg-white/10">ℹ️ About</Link>
           <Link href="/contact" className="block px-4 py-3 rounded-lg hover:bg-white/10">📞 Contact</Link>

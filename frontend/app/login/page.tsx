@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 
-// 4 Users - Hardcoded
 const USERS = [
   { email: "admin@gmail.com", password: "12345678", role: "admin", redirect: "/admin" },
   { email: "focal@gmail.com", password: "12345678", role: "focal", redirect: "/focalperson" },
@@ -28,7 +28,6 @@ export default function LoginPage() {
 
     let valid = true;
 
-    // Email Validation
     if (!email) {
       setEmailError("Email لکھنا ضروری ہے");
       valid = false;
@@ -37,7 +36,6 @@ export default function LoginPage() {
       valid = false;
     }
 
-    // Password Validation - 1 se 8 tak
     if (!password) {
       setPasswordError("Password لکھنا ضروری ہے");
       valid = false;
@@ -48,7 +46,6 @@ export default function LoginPage() {
 
     if (!valid) return;
 
-    // Check User
     const user = USERS.find(
       (u) => u.email.toLowerCase() === email.toLowerCase() && u.password === password
     );
@@ -58,21 +55,15 @@ export default function LoginPage() {
       return;
     }
 
-    // Login Success - Role Save
     localStorage.setItem("userRole", user.role);
     localStorage.setItem("userEmail", user.email);
 
-    // sab ko direct apny page pr bejo
-
-     
-
-      router.push(user.redirect);
-    
+    router.push(user.redirect);
+    document.cookie = `userRole=${user.role}; path=/`;
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#FFF8E7] p-4">
-      {/* Responsive - Mobile pe full, Desktop pe chota Card */}
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-6 sm:p-8 md:p-10 border border-[#2E7D4F]/20">
         
         <div className="text-center mb-6">
@@ -83,7 +74,6 @@ export default function LoginPage() {
         </div>
 
         <form onSubmit={handleLogin} className="space-y-4">
-          {/* Email */}
           <div>
             <label className="block text-sm font-medium text-[#0F3D2E] mb-1">Email</label>
             <input
@@ -96,7 +86,6 @@ export default function LoginPage() {
             {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
           </div>
 
-          {/* Password */}
           <div>
             <label className="block text-sm font-medium text-[#0F3D2E] mb-1">Password</label>
             <div className="relative">
@@ -124,19 +113,14 @@ export default function LoginPage() {
             </div>
           )}
 
-          <button
-            type="submit"
-            className="w-full bg-[#0F3d2E] hover:bg-[#2E7D4F] text-white font-semibold py-3 rounded-lg transition text-sm sm:text-base"
-          >
-            Login
-          </button>
+          <PrimaryButton text="Login" type="submit" />
+
         </form>
 
-        {/* Test Info */}
         <div className="mt-6 bg-[#FFF8E7] p-4 rounded-lg text-xs sm:text-sm text-gray-600 border border-[#2E7D4F]/20">
           <p className="font-bold text-[#0F3D2E] mb-2">Test karne ke liye:</p>
           <p>Admin: admin@gmail.com / 12345678</p>
-          <p>Vocal: focal@gmail.com / 12345678</p>
+          <p>Focal: focal@gmail.com / 12345678</p>
           <p>Donor: donor@gmail.com / 12345678</p>
           <p>Needy: needy@gmail.com / 12345678</p>
         </div>
